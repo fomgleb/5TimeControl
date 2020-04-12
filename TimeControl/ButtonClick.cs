@@ -87,7 +87,7 @@ namespace TimeControl
         {
             SqlCommand command = new SqlCommand("DELETE FROM [TextBoxes] WHERE [Name]=@Name", sqlConnection);
 
-            command.Parameters.AddWithValue("Name", TextBoxDelete.Text.Replace(" ", "_"));1
+            command.Parameters.AddWithValue("Name", TextBoxDelete.Text.Replace(" ", "_"));
 
             await command.ExecuteNonQueryAsync();
 
