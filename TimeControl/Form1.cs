@@ -107,7 +107,10 @@ namespace TimeControl
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FromTextBoxesToFiles(selectedItem);
+            if (selectedItem != null)
+            {
+                FromTextBoxesToFiles(selectedItem);
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
