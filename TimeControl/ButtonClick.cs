@@ -116,6 +116,7 @@ namespace TimeControl
             {
                 if (TextBoxOldName.Text != "" && TextBoxNewName.Text != "" && TextBoxOldName.Text != TextBoxNewName.Text)
                     Directory.Move(pathToOldFile, pathToNewFile);
+                FromDirToListBox();
             }
             catch (Exception)
             {
@@ -124,8 +125,6 @@ namespace TimeControl
 
             if (selectedItem == TextBoxOldName.Text)
                 selectedItem = TextBoxNewName.Text;
-
-            FromDirToListBox();
         }
 
         private void ButtonAddItem_Click(object sender, EventArgs e)
@@ -136,11 +135,10 @@ namespace TimeControl
             {
                 Directory.CreateDirectory(pathToFile);
                 CreateEmptyFiles(TextBoxAddItem.Text);
+                FromDirToListBox();
             }
             else if (Directory.Exists(pathToFile) && TextBoxAddItem.Text != "")
                 MessageBox.Show("Такой элемент уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            FromDirToListBox();
 
             listBox1.SelectedItem = TextBoxAddItem.Text;
         }
