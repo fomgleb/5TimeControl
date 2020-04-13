@@ -20,8 +20,6 @@ namespace TimeControl
         public Form1()
         {
             InitializeComponent();
-            
-            TextBoxAllThis_Show();
         }
 
         void NumberDayOfWeek_Update()
@@ -33,8 +31,6 @@ namespace TimeControl
             {
                 numberDayOfWeek = numberDayOfWeek2;
                 thisWeekSeconds = 0;
-
-                TextBoxAllThis_Show();
             }
             else
                 numberDayOfWeek = numberDayOfWeek2;
@@ -48,8 +44,6 @@ namespace TimeControl
             {
                 numberDayOfYear = numberDayOfYear2;
                 todaySeconds = 0;
-
-                TextBoxAllThis_Show();
             }
         }
 
@@ -139,6 +133,7 @@ namespace TimeControl
                 FromFilesToTextBoxes(selectedItem);
                 NumberDayOfWeek_Update();
                 NumberDayOfYear_Update();
+                FromTextBoxesToFiles(selectedItem);
 
                 TextBoxAllThis_Show();
             }
