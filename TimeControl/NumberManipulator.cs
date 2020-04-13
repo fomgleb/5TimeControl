@@ -18,7 +18,7 @@ namespace TimeControl
             int result;
             switch (Day)
             {
-                case "Monday": result = 1; break;1
+                case "Monday": result = 1; break;
                 case "Tuesday": result = 2; break;
                 case "Wednesday": result = 3; break;
                 case "Thursday": result = 4; break;
