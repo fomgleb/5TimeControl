@@ -1,72 +1,82 @@
 ﻿using System;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+using System.IO;
 
 namespace TimeControl
 {
     public partial class Form1
     {
-        void SaveItem(string Item)
+        void FromTextBoxesToFiles(string Item)
         {
-            try
-            {
-                SqlCommand command = new SqlCommand("UPDATE [TextBoxes] SET [FirstYear]=@NewFirstYear, [FirstMonth]=@NewFirstMonth," +
-                                                                                       "[FirstDay]=@NewFirstDay, [FirstHour]=@NewFirstHour," +
-                                                                                       "[FirstMinute]=@NewFirstMinute, [FirstSecond]=@NewFirstSecond," +
-                                                                                       "[SecondYear]=@NewSecondYear, [SecondMonth]=@NewSecondMonth," +
-                                                                                       "[SecondDay]=@NewSecondDay, [SecondHour]=@NewSecondHour," +
-                                                                                       "[SecondMinute]=@NewSecondMinute, [SecondSecond]=@NewSecondSecond," +
-                                                                                       $"[AllSecond]=@NewAllSecond, [ThisWeekSecond]=@NewThisWeekSecond, [TodaySecond]=@NewTodaySecond, [NumberWeek]=@NewNumberWeek, [NumberDay]=@NewNumberDay WHERE [Name]=@{Item}", sqlConnection);
-
-                command.Parameters.AddWithValue("NewFirstYear", TextBoxFirstYear.Text);
-                command.Parameters.AddWithValue("NewFirstMonth", TextBoxFirstMonth.Text);
-                command.Parameters.AddWithValue("NewFirstDay", TextBoxFirstDay.Text);
-                command.Parameters.AddWithValue("NewFirstHour", TextBoxFirstHour.Text);
-                command.Parameters.AddWithValue("NewFirstMinute", TextBoxFirstMinute.Text);
-                command.Parameters.AddWithValue("NewFirstSecond", TextBoxFirstSecond.Text);
-                command.Parameters.AddWithValue("NewSecondYear", TextBoxSecondYear.Text);
-                command.Parameters.AddWithValue("NewSecondMonth", TextBoxSecondMonth.Text);
-                command.Parameters.AddWithValue("NewSecondDay", TextBoxSecondDay.Text);
-                command.Parameters.AddWithValue("NewSecondHour", TextBoxSecondHour.Text);
-                command.Parameters.AddWithValue("NewSecondMinute", TextBoxSecondMinute.Text);
-                command.Parameters.AddWithValue("NewSecondSecond", TextBoxSecondSecond.Text);
-                command.Parameters.AddWithValue("NewAllSecond", AllSecond);
-                command.Parameters.AddWithValue("NewThisWeekSecond", ThisWeekSecond);
-                command.Parameters.AddWithValue("NewTodaySecond", TodaySecond);
-                command.Parameters.AddWithValue("NewNumberWeek", numberDayOfWeek);
-                command.Parameters.AddWithValue("NewNumberDay", numberDayOfYear);
-                command.Parameters.AddWithValue($"{Item}", Item);
-
-                command.ExecuteNonQuery();
-            }
-            catch { }
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstYears.txt", TextBoxFirstYears.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstMonths.txt", TextBoxFirstMonths.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstDays.txt", TextBoxFirstDays.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstHours.txt", TextBoxFirstHours.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstMinutes.txt", TextBoxFirstMinutes.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstSeconds.txt", TextBoxFirstSeconds.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondYears.txt", TextBoxSecondYears.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondMonths.txt", TextBoxSecondMonths.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondDays.txt", TextBoxSecondDays.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondHours.txt", TextBoxSecondHours.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondMinutes.txt", TextBoxSecondMinutes.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondSeconds.txt", TextBoxSecondSeconds.Text);
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "AllSeconds.txt", Convert.ToString(allSeconds));
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "ThisWeekSeconds.txt", Convert.ToString(thisWeekSeconds));
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "TodaySeconds.txt", Convert.ToString(todaySeconds));
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfWeek.txt", Convert.ToString(numberDayOfWeek));
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfYear.txt", Convert.ToString(numberDayOfYear));
         }
 
-        void listBox1_Update()
+        void FromFilesToTextBoxes(string Item)
+        {
+            TextBoxFirstYears.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "FirstYears.txt");
+            TextBoxFirstMonths.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "FirstMonths.txt");
+            TextBoxFirstDays.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "FirstDays.txt");
+            TextBoxFirstHours.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "FirstHours.txt");
+            TextBoxFirstMinutes.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "FirstMinutes.txt");
+            TextBoxFirstSeconds.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "FirstSeconds.txt");
+            TextBoxSecondYears.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "SecondYears.txt");
+            TextBoxSecondMonths.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "SecondMonths.txt");
+            TextBoxSecondDays.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "SecondDays.txt");
+            TextBoxSecondHours.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "SecondHours.txt");
+            TextBoxSecondMinutes.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "SecondMinutes.txt");
+            TextBoxSecondSeconds.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "SecondSeconds.txt");
+            allSeconds = Convert.ToInt32(File.ReadAllText(pathToDir + "\\" + Item + "\\" + "AllSeconds.txt"));
+            thisWeekSeconds = Convert.ToInt32(File.ReadAllText(pathToDir + "\\" + Item + "\\" + "ThisWeekSeconds.txt"));
+            todaySeconds = Convert.ToInt32(File.ReadAllText(pathToDir + "\\" + Item + "\\" + "TodaySeconds.txt"));
+            numberDayOfWeek = Convert.ToInt32(File.ReadAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfWeek.txt"));
+            numberDayOfYear = Convert.ToInt32(File.ReadAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfYear.txt"));
+        }
+
+        void CreateEmptyFiles(string Item)
+        {
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstYears.txt", "0000");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstMonths.txt", "00");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstDays.txt", "00");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstHours.txt", "00");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstMinutes.txt", "00");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "FirstSeconds.txt", "00");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondYears.txt", "0000");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondMonths.txt", "00");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondDays.txt", "00");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondHours.txt", "00");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondMinutes.txt", "00");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "SecondSeconds.txt", "00");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "AllSeconds.txt", "0");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "ThisWeekSeconds.txt", "0");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "TodaySeconds.txt", "0");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfWeek.txt", "0");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfYear.txt", "0");
+        }
+
+        void FromDirToListBox()
         {
             listBox1.Items.Clear();
 
-            SqlDataReader sqlReader = null;
-
-            SqlCommand command = new SqlCommand("SELECT * FROM [TextBoxes]", sqlConnection);
-
-            try
+            string[] items = Directory.GetDirectories(pathToDir);
+            foreach (string item in items)
             {
-                sqlReader = command.ExecuteReader();
-
-                while (sqlReader.Read())
-                {
-                    listBox1.Items.Add(Convert.ToString(sqlReader["Name"]));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlReader != null)
-                    sqlReader.Close();
+                string dirName = new DirectoryInfo(item).Name;
+                listBox1.Items.Add(dirName);
             }
 
             if (listBox1.Items.Count <= 0)
@@ -83,7 +93,6 @@ namespace TimeControl
                 GroupBoxAdd.Visible = false;
                 GroupBoxTime.Visible = false;
             }
-            listBox1.SelectedItem = selectedItem;
         }
     }
 }
