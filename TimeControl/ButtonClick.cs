@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Data.SqlClient;
+using System.IO;
+using System.Windows.Forms;
 
 namespace TimeControl
 {
@@ -7,24 +8,24 @@ namespace TimeControl
     {
         private void ButtonSetNowFirst_Click(object sender, EventArgs e)
         {
-            TextBoxFirstDay.Text = NumberManipulator.AddZero(DateTime.Now.Day);
-            TextBoxFirstMonth.Text = NumberManipulator.AddZero(DateTime.Now.Month);
-            TextBoxFirstYear.Text = NumberManipulator.AddZero(DateTime.Now.Year);
+            TextBoxFirstDays.Text = NumberManipulator.AddZero(DateTime.Now.Day);
+            TextBoxFirstMonths.Text = NumberManipulator.AddZero(DateTime.Now.Month);
+            TextBoxFirstYears.Text = NumberManipulator.AddZero(DateTime.Now.Year);
 
-            TextBoxFirstHour.Text = NumberManipulator.AddZero(DateTime.Now.Hour);
-            TextBoxFirstMinute.Text = NumberManipulator.AddZero(DateTime.Now.Minute);
-            TextBoxFirstSecond.Text = NumberManipulator.AddZero(DateTime.Now.Second);
+            TextBoxFirstHours.Text = NumberManipulator.AddZero(DateTime.Now.Hour);
+            TextBoxFirstMinutes.Text = NumberManipulator.AddZero(DateTime.Now.Minute);
+            TextBoxFirstSeconds.Text = NumberManipulator.AddZero(DateTime.Now.Second);
         }
 
         private void ButtonSetNowSecond_Click(object sender, EventArgs e)
         {
-            TextBoxSecondDay.Text = NumberManipulator.AddZero(DateTime.Now.Day);
-            TextBoxSecondMonth.Text = NumberManipulator.AddZero(DateTime.Now.Month);
-            TextBoxSecondYear.Text = NumberManipulator.AddZero(DateTime.Now.Year);
+            TextBoxSecondDays.Text = NumberManipulator.AddZero(DateTime.Now.Day);
+            TextBoxSecondMonths.Text = NumberManipulator.AddZero(DateTime.Now.Month);
+            TextBoxSecondYears.Text = NumberManipulator.AddZero(DateTime.Now.Year);
 
-            TextBoxSecondHour.Text = NumberManipulator.AddZero(DateTime.Now.Hour);
-            TextBoxSecondMinute.Text = NumberManipulator.AddZero(DateTime.Now.Minute);
-            TextBoxSecondSecond.Text = NumberManipulator.AddZero(DateTime.Now.Second);
+            TextBoxSecondHours.Text = NumberManipulator.AddZero(DateTime.Now.Hour);
+            TextBoxSecondMinutes.Text = NumberManipulator.AddZero(DateTime.Now.Minute);
+            TextBoxSecondSeconds.Text = NumberManipulator.AddZero(DateTime.Now.Second);
         }
 
         private void ButtonAddTime_Click(object sender, EventArgs e)
@@ -32,13 +33,13 @@ namespace TimeControl
             int daysInSeconds;
             try
             {
-                DateTime firstDate = new DateTime(Convert.ToInt32(TextBoxFirstYear.Text), Convert.ToInt32(TextBoxFirstMonth.Text),
-                                                  Convert.ToInt32(TextBoxFirstDay.Text), Convert.ToInt32(TextBoxFirstHour.Text),
-                                                  Convert.ToInt32(TextBoxFirstMinute.Text), Convert.ToInt32(TextBoxFirstSecond.Text));
+                DateTime firstDate = new DateTime(Convert.ToInt32(TextBoxFirstYears.Text), Convert.ToInt32(TextBoxFirstMonths.Text),
+                                                  Convert.ToInt32(TextBoxFirstDays.Text), Convert.ToInt32(TextBoxFirstHours.Text),
+                                                  Convert.ToInt32(TextBoxFirstMinutes.Text), Convert.ToInt32(TextBoxFirstSeconds.Text));
 
-                DateTime secondDate = new DateTime(Convert.ToInt32(TextBoxSecondYear.Text), Convert.ToInt32(TextBoxSecondMonth.Text),
-                                                   Convert.ToInt32(TextBoxSecondDay.Text), Convert.ToInt32(TextBoxSecondHour.Text),
-                                                   Convert.ToInt32(TextBoxSecondMinute.Text), Convert.ToInt32(TextBoxSecondSecond.Text));
+                DateTime secondDate = new DateTime(Convert.ToInt32(TextBoxSecondYears.Text), Convert.ToInt32(TextBoxSecondMonths.Text),
+                                                   Convert.ToInt32(TextBoxSecondDays.Text), Convert.ToInt32(TextBoxSecondHours.Text),
+                                                   Convert.ToInt32(TextBoxSecondMinutes.Text), Convert.ToInt32(TextBoxSecondSeconds.Text));
 
                 TimeSpan differenseDate = secondDate - firstDate;
 
@@ -47,9 +48,9 @@ namespace TimeControl
                 else
                     daysInSeconds = 0;
 
-                AllSecond += (differenseDate.Hours * 60 * 60) + (differenseDate.Minutes * 60) + (differenseDate.Seconds) + daysInSeconds;
-                ThisWeekSecond += (differenseDate.Hours * 60 * 60) + (differenseDate.Minutes * 60) + (differenseDate.Seconds) + daysInSeconds;
-                TodaySecond += (differenseDate.Hours * 60 * 60) + (differenseDate.Minutes * 60) + (differenseDate.Seconds) + daysInSeconds;
+                allSeconds += (differenseDate.Hours * 60 * 60) + (differenseDate.Minutes * 60) + (differenseDate.Seconds) + daysInSeconds;
+                thisWeekSeconds += (differenseDate.Hours * 60 * 60) + (differenseDate.Minutes * 60) + (differenseDate.Seconds) + daysInSeconds;
+                todaySeconds += (differenseDate.Hours * 60 * 60) + (differenseDate.Minutes * 60) + (differenseDate.Seconds) + daysInSeconds;
 
                 TextBoxAllThis_Show();
             }
@@ -58,76 +59,90 @@ namespace TimeControl
 
         private void ButtonClearAll_Click(object sender, EventArgs e)
         {
-            AllSecond = 0;
-            ThisWeekSecond = 0;
-            TodaySecond = 0;
+            allSeconds = 0;
+            thisWeekSeconds = 0;
+            todaySeconds = 0;
 
             TextBoxAllThis_Show();
         }
 
         private void ButtonClearThisWeek_Click(object sender, EventArgs e)
         {
-            AllSecond -= ThisWeekSecond;
-            ThisWeekSecond = 0;
-            TodaySecond = 0;
+            allSeconds -= thisWeekSeconds;
+            thisWeekSeconds = 0;
+            todaySeconds = 0;
 
             TextBoxAllThis_Show();
         }
 
         private void ButtonClearToday_Click(object sender, EventArgs e)
         {
-            AllSecond -= TodaySecond;
-            ThisWeekSecond -= TodaySecond;
-            TodaySecond = 0;
+            allSeconds -= todaySeconds;
+            thisWeekSeconds -= todaySeconds;
+            todaySeconds = 0;
 
             TextBoxAllThis_Show();
         }
 
-        private async void ButtonDelete_Click(object sender, EventArgs e)
+        private void ButtonDelete_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM [TextBoxes] WHERE [Name]=@Name", sqlConnection);
+            try
+            {
+                if (TextBoxDelete.Text != "")
+                    Directory.Delete(pathToDir + "\\" + TextBoxDelete.Text, true);
 
-            command.Parameters.AddWithValue("Name", TextBoxDelete.Text.Replace(" ", "_"));
+                selectedItem = null;
 
-            await command.ExecuteNonQueryAsync();
+                FromDirToListBox();
 
-            listBox1_Update();
+                if (listBox1.Items == null)
+                {
+                    LabelAdd.Visible = true;
+                    LabelSelect.Visible = false;
+                    GroupBoxAdd.Visible = false;
+                    GroupBoxTime.Visible = false;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Такого элемента не существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void ButtonChange_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand($"SELECT * FROM [TextBoxes] WHERE (Name)=@Name", sqlConnection);
-            command.Parameters.AddWithValue("Name", TextBoxNewName.Text.Replace(" ", "_"));
-            int temp = Convert.ToInt16(command.ExecuteScalar());
-            if (temp == 0)
+            string pathToOldFile = pathToDir + "\\" + TextBoxOldName.Text;
+            string pathToNewFile = pathToDir + "\\" + TextBoxNewName.Text;
+            try
             {
-                command = new SqlCommand("UPDATE [TextBoxes] SET [Name]=@NewName WHERE [Name]=@OldName", sqlConnection);
-
-                command.Parameters.AddWithValue("OldName", TextBoxOldName.Text.Replace(" ", "_"));
-                command.Parameters.AddWithValue("NewName", TextBoxNewName.Text.Replace(" ", "_"));
-
-                command.ExecuteNonQuery();
-
-                selectedItem = TextBoxNewName.Text.Replace(" ", "_");
-
-                listBox1_Update();
+                if (TextBoxOldName.Text != "" && TextBoxNewName.Text != "" && TextBoxOldName.Text != TextBoxNewName.Text)
+                    Directory.Move(pathToOldFile, pathToNewFile);
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Такого элемента не существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (selectedItem == TextBoxOldName.Text)
+                selectedItem = TextBoxNewName.Text;
+
+            FromDirToListBox();
         }
 
-        private void ButtonAddName_Click(object sender, EventArgs e)
+        private void ButtonAddItem_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand($"SELECT * FROM [TextBoxes] WHERE (Name)=@Name", sqlConnection);
-            command.Parameters.AddWithValue("Name", TextBoxAddName.Text.Replace(" ", "_"));
-            int temp = Convert.ToInt16(command.ExecuteScalar());
-            if (TextBoxAddName.Text != "" && temp == 0)
+            string pathToFile = pathToDir + "\\" + TextBoxAddItem.Text;
+
+            if (!Directory.Exists(pathToFile) && TextBoxAddItem.Text != "")
             {
-                command = new SqlCommand("INSERT INTO [TextBoxes] (Name)VALUES(@Name)", sqlConnection);
-
-                command.Parameters.AddWithValue("Name", TextBoxAddName.Text.Replace(" ", "_"));
-
-                command.ExecuteNonQuery();
-
-                listBox1_Update();
+                Directory.CreateDirectory(pathToFile);
+                CreateEmptyFiles(TextBoxAddItem.Text);
             }
+            else if (Directory.Exists(pathToFile) && TextBoxAddItem.Text != "")
+                MessageBox.Show("Такой элемент уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            FromDirToListBox();
+
+            listBox1.SelectedItem = TextBoxAddItem.Text;
         }
     }
 }

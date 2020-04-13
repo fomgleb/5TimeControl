@@ -33,39 +33,39 @@
             this.ButtonClearAll = new System.Windows.Forms.Button();
             this.ButtonClearThisWeek = new System.Windows.Forms.Button();
             this.ButtonAddTime = new System.Windows.Forms.Button();
-            this.TextBoxThisWeekMinute = new System.Windows.Forms.TextBox();
-            this.TextBoxThisWeekSecond = new System.Windows.Forms.TextBox();
+            this.TextBoxThisWeekMinutes = new System.Windows.Forms.TextBox();
+            this.TextBoxThisWeekSeconds = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.TextBoxThisWeekHour = new System.Windows.Forms.TextBox();
+            this.TextBoxThisWeekHours = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.TextBoxAllMinute = new System.Windows.Forms.TextBox();
-            this.TextBoxAllSecond = new System.Windows.Forms.TextBox();
+            this.TextBoxAllMinutes = new System.Windows.Forms.TextBox();
+            this.TextBoxAllSeconds = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.TextBoxAllHour = new System.Windows.Forms.TextBox();
+            this.TextBoxAllHours = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ButtonSetNowSecond = new System.Windows.Forms.Button();
             this.ButtonSetNowFirst = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.TextBoxSecondMonth = new System.Windows.Forms.TextBox();
-            this.TextBoxSecondDay = new System.Windows.Forms.TextBox();
-            this.TextBoxSecondSecond = new System.Windows.Forms.TextBox();
-            this.TextBoxSecondMinute = new System.Windows.Forms.TextBox();
-            this.TextBoxSecondHour = new System.Windows.Forms.TextBox();
-            this.TextBoxSecondYear = new System.Windows.Forms.TextBox();
+            this.TextBoxSecondMonths = new System.Windows.Forms.TextBox();
+            this.TextBoxSecondDays = new System.Windows.Forms.TextBox();
+            this.TextBoxSecondSeconds = new System.Windows.Forms.TextBox();
+            this.TextBoxSecondMinutes = new System.Windows.Forms.TextBox();
+            this.TextBoxSecondHours = new System.Windows.Forms.TextBox();
+            this.TextBoxSecondYears = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TextBoxFirstMonth = new System.Windows.Forms.TextBox();
-            this.TextBoxFirstDay = new System.Windows.Forms.TextBox();
-            this.TextBoxFirstSecond = new System.Windows.Forms.TextBox();
-            this.TextBoxFirstMinute = new System.Windows.Forms.TextBox();
-            this.TextBoxFirstHour = new System.Windows.Forms.TextBox();
-            this.TextBoxFirstYear = new System.Windows.Forms.TextBox();
+            this.TextBoxFirstMonths = new System.Windows.Forms.TextBox();
+            this.TextBoxFirstDays = new System.Windows.Forms.TextBox();
+            this.TextBoxFirstSeconds = new System.Windows.Forms.TextBox();
+            this.TextBoxFirstMinutes = new System.Windows.Forms.TextBox();
+            this.TextBoxFirstHours = new System.Windows.Forms.TextBox();
+            this.TextBoxFirstYears = new System.Windows.Forms.TextBox();
             this.ButtonClearToday = new System.Windows.Forms.Button();
-            this.TextBoxTodayMinute = new System.Windows.Forms.TextBox();
-            this.TextBoxTodaySecond = new System.Windows.Forms.TextBox();
+            this.TextBoxTodayMinutes = new System.Windows.Forms.TextBox();
+            this.TextBoxTodaySeconds = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.TextBoxTodayHour = new System.Windows.Forms.TextBox();
+            this.TextBoxTodayHours = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -79,8 +79,8 @@
             this.TextBoxDelete = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ButtonAddName = new System.Windows.Forms.Button();
-            this.TextBoxAddName = new System.Windows.Forms.TextBox();
+            this.ButtonAddItem = new System.Windows.Forms.Button();
+            this.TextBoxAddItem = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.GroupBoxAdd = new System.Windows.Forms.GroupBox();
@@ -143,33 +143,33 @@
             this.ButtonAddTime.UseVisualStyleBackColor = true;
             this.ButtonAddTime.Click += new System.EventHandler(this.ButtonAddTime_Click);
             // 
-            // TextBoxThisWeekMinute
+            // TextBoxThisWeekMinutes
             // 
-            this.TextBoxThisWeekMinute.BackColor = System.Drawing.Color.White;
-            this.TextBoxThisWeekMinute.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxThisWeekMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxThisWeekMinute.Location = new System.Drawing.Point(445, 75);
-            this.TextBoxThisWeekMinute.MaxLength = 2;
-            this.TextBoxThisWeekMinute.Name = "TextBoxThisWeekMinute";
-            this.TextBoxThisWeekMinute.ReadOnly = true;
-            this.TextBoxThisWeekMinute.Size = new System.Drawing.Size(54, 55);
-            this.TextBoxThisWeekMinute.TabIndex = 158;
-            this.TextBoxThisWeekMinute.TabStop = false;
-            this.TextBoxThisWeekMinute.Text = "00";
+            this.TextBoxThisWeekMinutes.BackColor = System.Drawing.Color.White;
+            this.TextBoxThisWeekMinutes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxThisWeekMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxThisWeekMinutes.Location = new System.Drawing.Point(445, 75);
+            this.TextBoxThisWeekMinutes.MaxLength = 2;
+            this.TextBoxThisWeekMinutes.Name = "TextBoxThisWeekMinutes";
+            this.TextBoxThisWeekMinutes.ReadOnly = true;
+            this.TextBoxThisWeekMinutes.Size = new System.Drawing.Size(54, 55);
+            this.TextBoxThisWeekMinutes.TabIndex = 158;
+            this.TextBoxThisWeekMinutes.TabStop = false;
+            this.TextBoxThisWeekMinutes.Text = "00";
             // 
-            // TextBoxThisWeekSecond
+            // TextBoxThisWeekSeconds
             // 
-            this.TextBoxThisWeekSecond.BackColor = System.Drawing.Color.White;
-            this.TextBoxThisWeekSecond.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxThisWeekSecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxThisWeekSecond.Location = new System.Drawing.Point(505, 75);
-            this.TextBoxThisWeekSecond.MaxLength = 2;
-            this.TextBoxThisWeekSecond.Name = "TextBoxThisWeekSecond";
-            this.TextBoxThisWeekSecond.ReadOnly = true;
-            this.TextBoxThisWeekSecond.Size = new System.Drawing.Size(54, 55);
-            this.TextBoxThisWeekSecond.TabIndex = 160;
-            this.TextBoxThisWeekSecond.TabStop = false;
-            this.TextBoxThisWeekSecond.Text = "00";
+            this.TextBoxThisWeekSeconds.BackColor = System.Drawing.Color.White;
+            this.TextBoxThisWeekSeconds.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxThisWeekSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxThisWeekSeconds.Location = new System.Drawing.Point(505, 75);
+            this.TextBoxThisWeekSeconds.MaxLength = 2;
+            this.TextBoxThisWeekSeconds.Name = "TextBoxThisWeekSeconds";
+            this.TextBoxThisWeekSeconds.ReadOnly = true;
+            this.TextBoxThisWeekSeconds.Size = new System.Drawing.Size(54, 55);
+            this.TextBoxThisWeekSeconds.TabIndex = 160;
+            this.TextBoxThisWeekSeconds.TabStop = false;
+            this.TextBoxThisWeekSeconds.Text = "00";
             // 
             // label21
             // 
@@ -181,20 +181,20 @@
             this.label21.TabIndex = 159;
             this.label21.Text = ":";
             // 
-            // TextBoxThisWeekHour
+            // TextBoxThisWeekHours
             // 
-            this.TextBoxThisWeekHour.BackColor = System.Drawing.Color.White;
-            this.TextBoxThisWeekHour.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxThisWeekHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxThisWeekHour.Location = new System.Drawing.Point(278, 75);
-            this.TextBoxThisWeekHour.MaxLength = 999999;
-            this.TextBoxThisWeekHour.Name = "TextBoxThisWeekHour";
-            this.TextBoxThisWeekHour.ReadOnly = true;
-            this.TextBoxThisWeekHour.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TextBoxThisWeekHour.Size = new System.Drawing.Size(158, 55);
-            this.TextBoxThisWeekHour.TabIndex = 156;
-            this.TextBoxThisWeekHour.TabStop = false;
-            this.TextBoxThisWeekHour.Text = "00";
+            this.TextBoxThisWeekHours.BackColor = System.Drawing.Color.White;
+            this.TextBoxThisWeekHours.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxThisWeekHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxThisWeekHours.Location = new System.Drawing.Point(278, 75);
+            this.TextBoxThisWeekHours.MaxLength = 999999;
+            this.TextBoxThisWeekHours.Name = "TextBoxThisWeekHours";
+            this.TextBoxThisWeekHours.ReadOnly = true;
+            this.TextBoxThisWeekHours.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TextBoxThisWeekHours.Size = new System.Drawing.Size(158, 55);
+            this.TextBoxThisWeekHours.TabIndex = 156;
+            this.TextBoxThisWeekHours.TabStop = false;
+            this.TextBoxThisWeekHours.Text = "00";
             // 
             // label22
             // 
@@ -206,33 +206,33 @@
             this.label22.TabIndex = 157;
             this.label22.Text = ":";
             // 
-            // TextBoxAllMinute
+            // TextBoxAllMinutes
             // 
-            this.TextBoxAllMinute.BackColor = System.Drawing.Color.White;
-            this.TextBoxAllMinute.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxAllMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxAllMinute.Location = new System.Drawing.Point(320, 250);
-            this.TextBoxAllMinute.MaxLength = 2;
-            this.TextBoxAllMinute.Name = "TextBoxAllMinute";
-            this.TextBoxAllMinute.ReadOnly = true;
-            this.TextBoxAllMinute.Size = new System.Drawing.Size(54, 55);
-            this.TextBoxAllMinute.TabIndex = 153;
-            this.TextBoxAllMinute.TabStop = false;
-            this.TextBoxAllMinute.Text = "00";
+            this.TextBoxAllMinutes.BackColor = System.Drawing.Color.White;
+            this.TextBoxAllMinutes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxAllMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxAllMinutes.Location = new System.Drawing.Point(320, 250);
+            this.TextBoxAllMinutes.MaxLength = 2;
+            this.TextBoxAllMinutes.Name = "TextBoxAllMinutes";
+            this.TextBoxAllMinutes.ReadOnly = true;
+            this.TextBoxAllMinutes.Size = new System.Drawing.Size(54, 55);
+            this.TextBoxAllMinutes.TabIndex = 153;
+            this.TextBoxAllMinutes.TabStop = false;
+            this.TextBoxAllMinutes.Text = "00";
             // 
-            // TextBoxAllSecond
+            // TextBoxAllSeconds
             // 
-            this.TextBoxAllSecond.BackColor = System.Drawing.Color.White;
-            this.TextBoxAllSecond.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxAllSecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxAllSecond.Location = new System.Drawing.Point(380, 250);
-            this.TextBoxAllSecond.MaxLength = 2;
-            this.TextBoxAllSecond.Name = "TextBoxAllSecond";
-            this.TextBoxAllSecond.ReadOnly = true;
-            this.TextBoxAllSecond.Size = new System.Drawing.Size(54, 55);
-            this.TextBoxAllSecond.TabIndex = 155;
-            this.TextBoxAllSecond.TabStop = false;
-            this.TextBoxAllSecond.Text = "00";
+            this.TextBoxAllSeconds.BackColor = System.Drawing.Color.White;
+            this.TextBoxAllSeconds.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxAllSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxAllSeconds.Location = new System.Drawing.Point(380, 250);
+            this.TextBoxAllSeconds.MaxLength = 2;
+            this.TextBoxAllSeconds.Name = "TextBoxAllSeconds";
+            this.TextBoxAllSeconds.ReadOnly = true;
+            this.TextBoxAllSeconds.Size = new System.Drawing.Size(54, 55);
+            this.TextBoxAllSeconds.TabIndex = 155;
+            this.TextBoxAllSeconds.TabStop = false;
+            this.TextBoxAllSeconds.Text = "00";
             // 
             // label9
             // 
@@ -244,20 +244,20 @@
             this.label9.TabIndex = 154;
             this.label9.Text = ":";
             // 
-            // TextBoxAllHour
+            // TextBoxAllHours
             // 
-            this.TextBoxAllHour.BackColor = System.Drawing.Color.White;
-            this.TextBoxAllHour.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxAllHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxAllHour.Location = new System.Drawing.Point(153, 250);
-            this.TextBoxAllHour.MaxLength = 999999;
-            this.TextBoxAllHour.Name = "TextBoxAllHour";
-            this.TextBoxAllHour.ReadOnly = true;
-            this.TextBoxAllHour.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TextBoxAllHour.Size = new System.Drawing.Size(158, 55);
-            this.TextBoxAllHour.TabIndex = 151;
-            this.TextBoxAllHour.TabStop = false;
-            this.TextBoxAllHour.Text = "00";
+            this.TextBoxAllHours.BackColor = System.Drawing.Color.White;
+            this.TextBoxAllHours.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxAllHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxAllHours.Location = new System.Drawing.Point(153, 250);
+            this.TextBoxAllHours.MaxLength = 999999;
+            this.TextBoxAllHours.Name = "TextBoxAllHours";
+            this.TextBoxAllHours.ReadOnly = true;
+            this.TextBoxAllHours.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TextBoxAllHours.Size = new System.Drawing.Size(158, 55);
+            this.TextBoxAllHours.TabIndex = 151;
+            this.TextBoxAllHours.TabStop = false;
+            this.TextBoxAllHours.Text = "00";
             // 
             // label10
             // 
@@ -321,71 +321,71 @@
             this.label3.TabIndex = 146;
             this.label3.Text = "До";
             // 
-            // TextBoxSecondMonth
+            // TextBoxSecondMonths
             // 
-            this.TextBoxSecondMonth.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxSecondMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxSecondMonth.Location = new System.Drawing.Point(460, 95);
-            this.TextBoxSecondMonth.MaxLength = 2;
-            this.TextBoxSecondMonth.Name = "TextBoxSecondMonth";
-            this.TextBoxSecondMonth.Size = new System.Drawing.Size(61, 62);
-            this.TextBoxSecondMonth.TabIndex = 14;
-            this.TextBoxSecondMonth.Text = "00";
+            this.TextBoxSecondMonths.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxSecondMonths.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxSecondMonths.Location = new System.Drawing.Point(460, 95);
+            this.TextBoxSecondMonths.MaxLength = 2;
+            this.TextBoxSecondMonths.Name = "TextBoxSecondMonths";
+            this.TextBoxSecondMonths.Size = new System.Drawing.Size(61, 62);
+            this.TextBoxSecondMonths.TabIndex = 14;
+            this.TextBoxSecondMonths.Text = "00";
             // 
-            // TextBoxSecondDay
+            // TextBoxSecondDays
             // 
-            this.TextBoxSecondDay.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxSecondDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxSecondDay.Location = new System.Drawing.Point(393, 95);
-            this.TextBoxSecondDay.MaxLength = 2;
-            this.TextBoxSecondDay.Name = "TextBoxSecondDay";
-            this.TextBoxSecondDay.Size = new System.Drawing.Size(61, 62);
-            this.TextBoxSecondDay.TabIndex = 13;
-            this.TextBoxSecondDay.Text = "00";
+            this.TextBoxSecondDays.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxSecondDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxSecondDays.Location = new System.Drawing.Point(393, 95);
+            this.TextBoxSecondDays.MaxLength = 2;
+            this.TextBoxSecondDays.Name = "TextBoxSecondDays";
+            this.TextBoxSecondDays.Size = new System.Drawing.Size(61, 62);
+            this.TextBoxSecondDays.TabIndex = 13;
+            this.TextBoxSecondDays.Text = "00";
             // 
-            // TextBoxSecondSecond
+            // TextBoxSecondSeconds
             // 
-            this.TextBoxSecondSecond.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxSecondSecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxSecondSecond.Location = new System.Drawing.Point(554, 163);
-            this.TextBoxSecondSecond.MaxLength = 2;
-            this.TextBoxSecondSecond.Name = "TextBoxSecondSecond";
-            this.TextBoxSecondSecond.Size = new System.Drawing.Size(61, 62);
-            this.TextBoxSecondSecond.TabIndex = 18;
-            this.TextBoxSecondSecond.Text = "00";
+            this.TextBoxSecondSeconds.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxSecondSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxSecondSeconds.Location = new System.Drawing.Point(554, 163);
+            this.TextBoxSecondSeconds.MaxLength = 2;
+            this.TextBoxSecondSeconds.Name = "TextBoxSecondSeconds";
+            this.TextBoxSecondSeconds.Size = new System.Drawing.Size(61, 62);
+            this.TextBoxSecondSeconds.TabIndex = 18;
+            this.TextBoxSecondSeconds.Text = "00";
             // 
-            // TextBoxSecondMinute
+            // TextBoxSecondMinutes
             // 
-            this.TextBoxSecondMinute.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxSecondMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxSecondMinute.Location = new System.Drawing.Point(487, 163);
-            this.TextBoxSecondMinute.MaxLength = 2;
-            this.TextBoxSecondMinute.Name = "TextBoxSecondMinute";
-            this.TextBoxSecondMinute.Size = new System.Drawing.Size(61, 62);
-            this.TextBoxSecondMinute.TabIndex = 17;
-            this.TextBoxSecondMinute.Text = "00";
+            this.TextBoxSecondMinutes.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxSecondMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxSecondMinutes.Location = new System.Drawing.Point(487, 163);
+            this.TextBoxSecondMinutes.MaxLength = 2;
+            this.TextBoxSecondMinutes.Name = "TextBoxSecondMinutes";
+            this.TextBoxSecondMinutes.Size = new System.Drawing.Size(61, 62);
+            this.TextBoxSecondMinutes.TabIndex = 17;
+            this.TextBoxSecondMinutes.Text = "00";
             // 
-            // TextBoxSecondHour
+            // TextBoxSecondHours
             // 
-            this.TextBoxSecondHour.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxSecondHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxSecondHour.Location = new System.Drawing.Point(420, 163);
-            this.TextBoxSecondHour.MaxLength = 2;
-            this.TextBoxSecondHour.Name = "TextBoxSecondHour";
-            this.TextBoxSecondHour.Size = new System.Drawing.Size(61, 62);
-            this.TextBoxSecondHour.TabIndex = 16;
-            this.TextBoxSecondHour.Text = "00";
+            this.TextBoxSecondHours.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxSecondHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxSecondHours.Location = new System.Drawing.Point(420, 163);
+            this.TextBoxSecondHours.MaxLength = 2;
+            this.TextBoxSecondHours.Name = "TextBoxSecondHours";
+            this.TextBoxSecondHours.Size = new System.Drawing.Size(61, 62);
+            this.TextBoxSecondHours.TabIndex = 16;
+            this.TextBoxSecondHours.Text = "00";
             // 
-            // TextBoxSecondYear
+            // TextBoxSecondYears
             // 
-            this.TextBoxSecondYear.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxSecondYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxSecondYear.Location = new System.Drawing.Point(527, 95);
-            this.TextBoxSecondYear.MaxLength = 4;
-            this.TextBoxSecondYear.Name = "TextBoxSecondYear";
-            this.TextBoxSecondYear.Size = new System.Drawing.Size(115, 62);
-            this.TextBoxSecondYear.TabIndex = 15;
-            this.TextBoxSecondYear.Text = "0000";
+            this.TextBoxSecondYears.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxSecondYears.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxSecondYears.Location = new System.Drawing.Point(527, 95);
+            this.TextBoxSecondYears.MaxLength = 4;
+            this.TextBoxSecondYears.Name = "TextBoxSecondYears";
+            this.TextBoxSecondYears.Size = new System.Drawing.Size(115, 62);
+            this.TextBoxSecondYears.TabIndex = 15;
+            this.TextBoxSecondYears.Text = "0000";
             // 
             // label2
             // 
@@ -399,71 +399,71 @@
             this.label2.TabIndex = 139;
             this.label2.Text = "От";
             // 
-            // TextBoxFirstMonth
+            // TextBoxFirstMonths
             // 
-            this.TextBoxFirstMonth.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxFirstMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxFirstMonth.Location = new System.Drawing.Point(142, 95);
-            this.TextBoxFirstMonth.MaxLength = 2;
-            this.TextBoxFirstMonth.Name = "TextBoxFirstMonth";
-            this.TextBoxFirstMonth.Size = new System.Drawing.Size(61, 62);
-            this.TextBoxFirstMonth.TabIndex = 6;
-            this.TextBoxFirstMonth.Text = "00";
+            this.TextBoxFirstMonths.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxFirstMonths.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxFirstMonths.Location = new System.Drawing.Point(142, 95);
+            this.TextBoxFirstMonths.MaxLength = 2;
+            this.TextBoxFirstMonths.Name = "TextBoxFirstMonths";
+            this.TextBoxFirstMonths.Size = new System.Drawing.Size(61, 62);
+            this.TextBoxFirstMonths.TabIndex = 6;
+            this.TextBoxFirstMonths.Text = "00";
             // 
-            // TextBoxFirstDay
+            // TextBoxFirstDays
             // 
-            this.TextBoxFirstDay.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxFirstDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxFirstDay.Location = new System.Drawing.Point(75, 95);
-            this.TextBoxFirstDay.MaxLength = 2;
-            this.TextBoxFirstDay.Name = "TextBoxFirstDay";
-            this.TextBoxFirstDay.Size = new System.Drawing.Size(61, 62);
-            this.TextBoxFirstDay.TabIndex = 5;
-            this.TextBoxFirstDay.Text = "00";
+            this.TextBoxFirstDays.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxFirstDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxFirstDays.Location = new System.Drawing.Point(75, 95);
+            this.TextBoxFirstDays.MaxLength = 2;
+            this.TextBoxFirstDays.Name = "TextBoxFirstDays";
+            this.TextBoxFirstDays.Size = new System.Drawing.Size(61, 62);
+            this.TextBoxFirstDays.TabIndex = 5;
+            this.TextBoxFirstDays.Text = "00";
             // 
-            // TextBoxFirstSecond
+            // TextBoxFirstSeconds
             // 
-            this.TextBoxFirstSecond.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxFirstSecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxFirstSecond.Location = new System.Drawing.Point(236, 163);
-            this.TextBoxFirstSecond.MaxLength = 2;
-            this.TextBoxFirstSecond.Name = "TextBoxFirstSecond";
-            this.TextBoxFirstSecond.Size = new System.Drawing.Size(61, 62);
-            this.TextBoxFirstSecond.TabIndex = 10;
-            this.TextBoxFirstSecond.Text = "00";
+            this.TextBoxFirstSeconds.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxFirstSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxFirstSeconds.Location = new System.Drawing.Point(236, 163);
+            this.TextBoxFirstSeconds.MaxLength = 2;
+            this.TextBoxFirstSeconds.Name = "TextBoxFirstSeconds";
+            this.TextBoxFirstSeconds.Size = new System.Drawing.Size(61, 62);
+            this.TextBoxFirstSeconds.TabIndex = 10;
+            this.TextBoxFirstSeconds.Text = "00";
             // 
-            // TextBoxFirstMinute
+            // TextBoxFirstMinutes
             // 
-            this.TextBoxFirstMinute.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxFirstMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxFirstMinute.Location = new System.Drawing.Point(169, 163);
-            this.TextBoxFirstMinute.MaxLength = 2;
-            this.TextBoxFirstMinute.Name = "TextBoxFirstMinute";
-            this.TextBoxFirstMinute.Size = new System.Drawing.Size(61, 62);
-            this.TextBoxFirstMinute.TabIndex = 9;
-            this.TextBoxFirstMinute.Text = "00";
+            this.TextBoxFirstMinutes.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxFirstMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxFirstMinutes.Location = new System.Drawing.Point(169, 163);
+            this.TextBoxFirstMinutes.MaxLength = 2;
+            this.TextBoxFirstMinutes.Name = "TextBoxFirstMinutes";
+            this.TextBoxFirstMinutes.Size = new System.Drawing.Size(61, 62);
+            this.TextBoxFirstMinutes.TabIndex = 9;
+            this.TextBoxFirstMinutes.Text = "00";
             // 
-            // TextBoxFirstHour
+            // TextBoxFirstHours
             // 
-            this.TextBoxFirstHour.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxFirstHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxFirstHour.Location = new System.Drawing.Point(102, 163);
-            this.TextBoxFirstHour.MaxLength = 2;
-            this.TextBoxFirstHour.Name = "TextBoxFirstHour";
-            this.TextBoxFirstHour.Size = new System.Drawing.Size(61, 62);
-            this.TextBoxFirstHour.TabIndex = 8;
-            this.TextBoxFirstHour.Text = "00";
+            this.TextBoxFirstHours.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxFirstHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxFirstHours.Location = new System.Drawing.Point(102, 163);
+            this.TextBoxFirstHours.MaxLength = 2;
+            this.TextBoxFirstHours.Name = "TextBoxFirstHours";
+            this.TextBoxFirstHours.Size = new System.Drawing.Size(61, 62);
+            this.TextBoxFirstHours.TabIndex = 8;
+            this.TextBoxFirstHours.Text = "00";
             // 
-            // TextBoxFirstYear
+            // TextBoxFirstYears
             // 
-            this.TextBoxFirstYear.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxFirstYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxFirstYear.Location = new System.Drawing.Point(209, 95);
-            this.TextBoxFirstYear.MaxLength = 4;
-            this.TextBoxFirstYear.Name = "TextBoxFirstYear";
-            this.TextBoxFirstYear.Size = new System.Drawing.Size(115, 62);
-            this.TextBoxFirstYear.TabIndex = 7;
-            this.TextBoxFirstYear.Text = "0000";
+            this.TextBoxFirstYears.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxFirstYears.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxFirstYears.Location = new System.Drawing.Point(209, 95);
+            this.TextBoxFirstYears.MaxLength = 4;
+            this.TextBoxFirstYears.Name = "TextBoxFirstYears";
+            this.TextBoxFirstYears.Size = new System.Drawing.Size(115, 62);
+            this.TextBoxFirstYears.TabIndex = 7;
+            this.TextBoxFirstYears.Text = "0000";
             // 
             // ButtonClearToday
             // 
@@ -476,33 +476,33 @@
             this.ButtonClearToday.UseVisualStyleBackColor = true;
             this.ButtonClearToday.Click += new System.EventHandler(this.ButtonClearToday_Click);
             // 
-            // TextBoxTodayMinute
+            // TextBoxTodayMinutes
             // 
-            this.TextBoxTodayMinute.BackColor = System.Drawing.Color.White;
-            this.TextBoxTodayMinute.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxTodayMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxTodayMinute.Location = new System.Drawing.Point(159, 78);
-            this.TextBoxTodayMinute.MaxLength = 2;
-            this.TextBoxTodayMinute.Name = "TextBoxTodayMinute";
-            this.TextBoxTodayMinute.ReadOnly = true;
-            this.TextBoxTodayMinute.Size = new System.Drawing.Size(54, 55);
-            this.TextBoxTodayMinute.TabIndex = 169;
-            this.TextBoxTodayMinute.TabStop = false;
-            this.TextBoxTodayMinute.Text = "00";
+            this.TextBoxTodayMinutes.BackColor = System.Drawing.Color.White;
+            this.TextBoxTodayMinutes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxTodayMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxTodayMinutes.Location = new System.Drawing.Point(159, 78);
+            this.TextBoxTodayMinutes.MaxLength = 2;
+            this.TextBoxTodayMinutes.Name = "TextBoxTodayMinutes";
+            this.TextBoxTodayMinutes.ReadOnly = true;
+            this.TextBoxTodayMinutes.Size = new System.Drawing.Size(54, 55);
+            this.TextBoxTodayMinutes.TabIndex = 169;
+            this.TextBoxTodayMinutes.TabStop = false;
+            this.TextBoxTodayMinutes.Text = "00";
             // 
-            // TextBoxTodaySecond
+            // TextBoxTodaySeconds
             // 
-            this.TextBoxTodaySecond.BackColor = System.Drawing.Color.White;
-            this.TextBoxTodaySecond.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxTodaySecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxTodaySecond.Location = new System.Drawing.Point(219, 78);
-            this.TextBoxTodaySecond.MaxLength = 2;
-            this.TextBoxTodaySecond.Name = "TextBoxTodaySecond";
-            this.TextBoxTodaySecond.ReadOnly = true;
-            this.TextBoxTodaySecond.Size = new System.Drawing.Size(54, 55);
-            this.TextBoxTodaySecond.TabIndex = 171;
-            this.TextBoxTodaySecond.TabStop = false;
-            this.TextBoxTodaySecond.Text = "00";
+            this.TextBoxTodaySeconds.BackColor = System.Drawing.Color.White;
+            this.TextBoxTodaySeconds.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxTodaySeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxTodaySeconds.Location = new System.Drawing.Point(219, 78);
+            this.TextBoxTodaySeconds.MaxLength = 2;
+            this.TextBoxTodaySeconds.Name = "TextBoxTodaySeconds";
+            this.TextBoxTodaySeconds.ReadOnly = true;
+            this.TextBoxTodaySeconds.Size = new System.Drawing.Size(54, 55);
+            this.TextBoxTodaySeconds.TabIndex = 171;
+            this.TextBoxTodaySeconds.TabStop = false;
+            this.TextBoxTodaySeconds.Text = "00";
             // 
             // label14
             // 
@@ -514,20 +514,20 @@
             this.label14.TabIndex = 170;
             this.label14.Text = ":";
             // 
-            // TextBoxTodayHour
+            // TextBoxTodayHours
             // 
-            this.TextBoxTodayHour.BackColor = System.Drawing.Color.White;
-            this.TextBoxTodayHour.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxTodayHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxTodayHour.Location = new System.Drawing.Point(13, 78);
-            this.TextBoxTodayHour.MaxLength = 999999;
-            this.TextBoxTodayHour.Name = "TextBoxTodayHour";
-            this.TextBoxTodayHour.ReadOnly = true;
-            this.TextBoxTodayHour.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TextBoxTodayHour.Size = new System.Drawing.Size(137, 55);
-            this.TextBoxTodayHour.TabIndex = 167;
-            this.TextBoxTodayHour.TabStop = false;
-            this.TextBoxTodayHour.Text = "00";
+            this.TextBoxTodayHours.BackColor = System.Drawing.Color.White;
+            this.TextBoxTodayHours.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxTodayHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxTodayHours.Location = new System.Drawing.Point(13, 78);
+            this.TextBoxTodayHours.MaxLength = 999999;
+            this.TextBoxTodayHours.Name = "TextBoxTodayHours";
+            this.TextBoxTodayHours.ReadOnly = true;
+            this.TextBoxTodayHours.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TextBoxTodayHours.Size = new System.Drawing.Size(137, 55);
+            this.TextBoxTodayHours.TabIndex = 167;
+            this.TextBoxTodayHours.TabStop = false;
+            this.TextBoxTodayHours.Text = "00";
             // 
             // label15
             // 
@@ -571,7 +571,7 @@
             this.TextBoxNewName.MaxLength = 999;
             this.TextBoxNewName.Name = "TextBoxNewName";
             this.TextBoxNewName.Size = new System.Drawing.Size(227, 35);
-            this.TextBoxNewName.TabIndex = 142;
+            this.TextBoxNewName.TabIndex = 2;
             // 
             // label7
             // 
@@ -589,7 +589,7 @@
             this.ButtonChange.Location = new System.Drawing.Point(38, 320);
             this.ButtonChange.Name = "ButtonChange";
             this.ButtonChange.Size = new System.Drawing.Size(202, 57);
-            this.ButtonChange.TabIndex = 140;
+            this.ButtonChange.TabIndex = 3;
             this.ButtonChange.Text = "Изменить";
             this.ButtonChange.UseVisualStyleBackColor = true;
             this.ButtonChange.Click += new System.EventHandler(this.ButtonChange_Click);
@@ -602,7 +602,7 @@
             this.TextBoxOldName.MaxLength = 999;
             this.TextBoxOldName.Name = "TextBoxOldName";
             this.TextBoxOldName.Size = new System.Drawing.Size(227, 35);
-            this.TextBoxOldName.TabIndex = 139;
+            this.TextBoxOldName.TabIndex = 1;
             // 
             // label1
             // 
@@ -633,7 +633,7 @@
             this.ButtonDelete.Location = new System.Drawing.Point(38, 320);
             this.ButtonDelete.Name = "ButtonDelete";
             this.ButtonDelete.Size = new System.Drawing.Size(202, 57);
-            this.ButtonDelete.TabIndex = 137;
+            this.ButtonDelete.TabIndex = 2;
             this.ButtonDelete.Text = "Удалить";
             this.ButtonDelete.UseVisualStyleBackColor = true;
             this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
@@ -646,7 +646,7 @@
             this.TextBoxDelete.MaxLength = 999;
             this.TextBoxDelete.Name = "TextBoxDelete";
             this.TextBoxDelete.Size = new System.Drawing.Size(227, 35);
-            this.TextBoxDelete.TabIndex = 136;
+            this.TextBoxDelete.TabIndex = 1;
             // 
             // label5
             // 
@@ -660,8 +660,8 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.ButtonAddName);
-            this.tabPage2.Controls.Add(this.TextBoxAddName);
+            this.tabPage2.Controls.Add(this.ButtonAddItem);
+            this.tabPage2.Controls.Add(this.TextBoxAddItem);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -672,26 +672,26 @@
             this.tabPage2.Text = "Добавить";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // ButtonAddName
+            // ButtonAddItem
             // 
-            this.ButtonAddName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonAddName.Location = new System.Drawing.Point(38, 320);
-            this.ButtonAddName.Name = "ButtonAddName";
-            this.ButtonAddName.Size = new System.Drawing.Size(202, 57);
-            this.ButtonAddName.TabIndex = 134;
-            this.ButtonAddName.Text = "Добавить";
-            this.ButtonAddName.UseVisualStyleBackColor = true;
-            this.ButtonAddName.Click += new System.EventHandler(this.ButtonAddName_Click);
+            this.ButtonAddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonAddItem.Location = new System.Drawing.Point(38, 320);
+            this.ButtonAddItem.Name = "ButtonAddItem";
+            this.ButtonAddItem.Size = new System.Drawing.Size(202, 57);
+            this.ButtonAddItem.TabIndex = 2;
+            this.ButtonAddItem.Text = "Добавить";
+            this.ButtonAddItem.UseVisualStyleBackColor = true;
+            this.ButtonAddItem.Click += new System.EventHandler(this.ButtonAddItem_Click);
             // 
-            // TextBoxAddName
+            // TextBoxAddItem
             // 
-            this.TextBoxAddName.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TextBoxAddName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxAddName.Location = new System.Drawing.Point(25, 48);
-            this.TextBoxAddName.MaxLength = 999;
-            this.TextBoxAddName.Name = "TextBoxAddName";
-            this.TextBoxAddName.Size = new System.Drawing.Size(227, 35);
-            this.TextBoxAddName.TabIndex = 133;
+            this.TextBoxAddItem.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TextBoxAddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxAddItem.Location = new System.Drawing.Point(25, 48);
+            this.TextBoxAddItem.MaxLength = 999;
+            this.TextBoxAddItem.Name = "TextBoxAddItem";
+            this.TextBoxAddItem.Size = new System.Drawing.Size(227, 35);
+            this.TextBoxAddItem.TabIndex = 1;
             // 
             // label4
             // 
@@ -716,20 +716,20 @@
             // 
             // GroupBoxAdd
             // 
-            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstYear);
-            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstHour);
-            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstMinute);
-            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstSecond);
-            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstDay);
-            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstMonth);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstYears);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstHours);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstMinutes);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstSeconds);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstDays);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxFirstMonths);
             this.GroupBoxAdd.Controls.Add(this.label2);
-            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondYear);
-            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondHour);
-            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondMinute);
-            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondSecond);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondYears);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondHours);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondMinutes);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondSeconds);
             this.GroupBoxAdd.Controls.Add(this.ButtonAddTime);
-            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondDay);
-            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondMonth);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondDays);
+            this.GroupBoxAdd.Controls.Add(this.TextBoxSecondMonths);
             this.GroupBoxAdd.Controls.Add(this.label3);
             this.GroupBoxAdd.Controls.Add(this.ButtonSetNowFirst);
             this.GroupBoxAdd.Controls.Add(this.ButtonSetNowSecond);
@@ -750,33 +750,33 @@
             this.LabelAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelAdd.Location = new System.Drawing.Point(312, 354);
             this.LabelAdd.Name = "LabelAdd";
-            this.LabelAdd.Size = new System.Drawing.Size(523, 55);
+            this.LabelAdd.Size = new System.Drawing.Size(499, 55);
             this.LabelAdd.TabIndex = 147;
-            this.LabelAdd.Text = "<---- Добавте элемент";
+            this.LabelAdd.Text = "<---- Добавь элемент";
             this.LabelAdd.Visible = false;
             // 
             // GroupBoxTime
             // 
-            this.GroupBoxTime.Controls.Add(this.TextBoxAllHour);
-            this.GroupBoxTime.Controls.Add(this.TextBoxAllMinute);
-            this.GroupBoxTime.Controls.Add(this.TextBoxAllSecond);
-            this.GroupBoxTime.Controls.Add(this.TextBoxThisWeekSecond);
-            this.GroupBoxTime.Controls.Add(this.TextBoxThisWeekMinute);
-            this.GroupBoxTime.Controls.Add(this.TextBoxThisWeekHour);
+            this.GroupBoxTime.Controls.Add(this.ButtonClearAll);
+            this.GroupBoxTime.Controls.Add(this.TextBoxAllHours);
+            this.GroupBoxTime.Controls.Add(this.TextBoxAllMinutes);
+            this.GroupBoxTime.Controls.Add(this.TextBoxAllSeconds);
+            this.GroupBoxTime.Controls.Add(this.TextBoxThisWeekSeconds);
+            this.GroupBoxTime.Controls.Add(this.TextBoxThisWeekMinutes);
+            this.GroupBoxTime.Controls.Add(this.TextBoxThisWeekHours);
             this.GroupBoxTime.Controls.Add(this.label16);
             this.GroupBoxTime.Controls.Add(this.label6);
             this.GroupBoxTime.Controls.Add(this.label8);
             this.GroupBoxTime.Controls.Add(this.ButtonClearToday);
             this.GroupBoxTime.Controls.Add(this.label10);
-            this.GroupBoxTime.Controls.Add(this.TextBoxTodayMinute);
-            this.GroupBoxTime.Controls.Add(this.TextBoxTodaySecond);
+            this.GroupBoxTime.Controls.Add(this.TextBoxTodayMinutes);
+            this.GroupBoxTime.Controls.Add(this.TextBoxTodaySeconds);
             this.GroupBoxTime.Controls.Add(this.label9);
             this.GroupBoxTime.Controls.Add(this.label14);
-            this.GroupBoxTime.Controls.Add(this.TextBoxTodayHour);
+            this.GroupBoxTime.Controls.Add(this.TextBoxTodayHours);
             this.GroupBoxTime.Controls.Add(this.label15);
             this.GroupBoxTime.Controls.Add(this.label22);
             this.GroupBoxTime.Controls.Add(this.label21);
-            this.GroupBoxTime.Controls.Add(this.ButtonClearAll);
             this.GroupBoxTime.Controls.Add(this.ButtonClearThisWeek);
             this.GroupBoxTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.GroupBoxTime.Location = new System.Drawing.Point(309, 428);
@@ -795,9 +795,9 @@
             this.LabelSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelSelect.Location = new System.Drawing.Point(312, 428);
             this.LabelSelect.Name = "LabelSelect";
-            this.LabelSelect.Size = new System.Drawing.Size(554, 55);
+            this.LabelSelect.Size = new System.Drawing.Size(505, 55);
             this.LabelSelect.TabIndex = 148;
-            this.LabelSelect.Text = "<---- Выберите элемент";
+            this.LabelSelect.Text = "<---- Выбери элемент";
             // 
             // Form1
             // 
@@ -814,7 +814,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "TimeControl";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage4.ResumeLayout(false);
@@ -838,39 +838,39 @@
         private System.Windows.Forms.Button ButtonClearAll;
         private System.Windows.Forms.Button ButtonClearThisWeek;
         private System.Windows.Forms.Button ButtonAddTime;
-        private System.Windows.Forms.TextBox TextBoxThisWeekMinute;
-        private System.Windows.Forms.TextBox TextBoxThisWeekSecond;
+        private System.Windows.Forms.TextBox TextBoxThisWeekMinutes;
+        private System.Windows.Forms.TextBox TextBoxThisWeekSeconds;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox TextBoxThisWeekHour;
+        private System.Windows.Forms.TextBox TextBoxThisWeekHours;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox TextBoxAllMinute;
-        private System.Windows.Forms.TextBox TextBoxAllSecond;
+        private System.Windows.Forms.TextBox TextBoxAllMinutes;
+        private System.Windows.Forms.TextBox TextBoxAllSeconds;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox TextBoxAllHour;
+        private System.Windows.Forms.TextBox TextBoxAllHours;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button ButtonSetNowSecond;
         private System.Windows.Forms.Button ButtonSetNowFirst;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TextBoxSecondMonth;
-        private System.Windows.Forms.TextBox TextBoxSecondDay;
-        private System.Windows.Forms.TextBox TextBoxSecondSecond;
-        private System.Windows.Forms.TextBox TextBoxSecondMinute;
-        private System.Windows.Forms.TextBox TextBoxSecondHour;
-        private System.Windows.Forms.TextBox TextBoxSecondYear;
+        private System.Windows.Forms.TextBox TextBoxSecondMonths;
+        private System.Windows.Forms.TextBox TextBoxSecondDays;
+        private System.Windows.Forms.TextBox TextBoxSecondSeconds;
+        private System.Windows.Forms.TextBox TextBoxSecondMinutes;
+        private System.Windows.Forms.TextBox TextBoxSecondHours;
+        private System.Windows.Forms.TextBox TextBoxSecondYears;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TextBoxFirstMonth;
-        private System.Windows.Forms.TextBox TextBoxFirstDay;
-        private System.Windows.Forms.TextBox TextBoxFirstSecond;
-        private System.Windows.Forms.TextBox TextBoxFirstMinute;
-        private System.Windows.Forms.TextBox TextBoxFirstHour;
-        private System.Windows.Forms.TextBox TextBoxFirstYear;
+        private System.Windows.Forms.TextBox TextBoxFirstMonths;
+        private System.Windows.Forms.TextBox TextBoxFirstDays;
+        private System.Windows.Forms.TextBox TextBoxFirstSeconds;
+        private System.Windows.Forms.TextBox TextBoxFirstMinutes;
+        private System.Windows.Forms.TextBox TextBoxFirstHours;
+        private System.Windows.Forms.TextBox TextBoxFirstYears;
         private System.Windows.Forms.Button ButtonClearToday;
-        private System.Windows.Forms.TextBox TextBoxTodayMinute;
-        private System.Windows.Forms.TextBox TextBoxTodaySecond;
+        private System.Windows.Forms.TextBox TextBoxTodayMinutes;
+        private System.Windows.Forms.TextBox TextBoxTodaySeconds;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox TextBoxTodayHour;
+        private System.Windows.Forms.TextBox TextBoxTodayHours;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TabPage tabPage4;
@@ -879,8 +879,8 @@
         private System.Windows.Forms.TextBox TextBoxDelete;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button ButtonAddName;
-        private System.Windows.Forms.TextBox TextBoxAddName;
+        private System.Windows.Forms.Button ButtonAddItem;
+        private System.Windows.Forms.TextBox TextBoxAddItem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.GroupBox GroupBoxAdd;

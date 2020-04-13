@@ -1,20 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Windows.Forms;
 
 namespace TimeControl
 {
     public partial class Form1 : Form
     {
-        int AllSecond;
-        int ThisWeekSecond;
-        int TodaySecond;
+        string pathToDir = Environment.CurrentDirectory + "\\TimeControlSaves";
+
+        int allSeconds;
+        int thisWeekSeconds;
+        int todaySeconds;
+
         int numberDayOfWeek;
         int numberDayOfYear;
-        string selectedItem;
 
-        SqlConnection sqlConnection;
+        string selectedItem;
 
         public Form1()
         {
@@ -31,7 +35,7 @@ namespace TimeControl
             if (numberDayOfWeek > numberDayOfWeek2)
             {
                 numberDayOfWeek = numberDayOfWeek2;
-                ThisWeekSecond = 0;
+                thisWeekSeconds = 0;
 
                 TextBoxAllThis_Show();
             }
@@ -46,7 +50,7 @@ namespace TimeControl
             if (numberDayOfYear != numberDayOfYear2)
             {
                 numberDayOfYear = numberDayOfYear2;
-                TodaySecond = 0;
+                todaySeconds = 0;
 
                 TextBoxAllThis_Show();
             }
@@ -54,16 +58,16 @@ namespace TimeControl
 
         void TextBoxAllThis_Show()
         {
-            if (AllSecond < 0)
-                AllSecond = 0;
-            if (ThisWeekSecond < 0)
-                ThisWeekSecond = 0;
-            if (TodaySecond < 0)
-                TodaySecond = 0;
+            if (allSeconds < 0)
+                allSeconds = 0;
+            if (thisWeekSeconds < 0)
+                thisWeekSeconds = 0;
+            if (todaySeconds < 0)
+                todaySeconds = 0;
 
-            var aSeconds = TimeSpan.FromSeconds(AllSecond);
-            var twSeconds = TimeSpan.FromSeconds(ThisWeekSecond);
-            var tSeconds = TimeSpan.FromSeconds(TodaySecond);
+            var aSeconds = TimeSpan.FromSeconds(allSeconds);
+            var twSeconds = TimeSpan.FromSeconds(thisWeekSeconds);
+            var tSeconds = TimeSpan.FromSeconds(todaySeconds);
 
             var aDay = aSeconds.Days;
             var aHour = aSeconds.Hours;
@@ -81,107 +85,67 @@ namespace TimeControl
             var tSecond = tSeconds.Seconds;
 
             if (aDay > 0)
-                TextBoxAllHour.Text = NumberManipulator.AddZero((aDay * 24) + aHour);
+                TextBoxAllHours.Text = NumberManipulator.AddZero((aDay * 24) + aHour);
             else
-                TextBoxAllHour.Text = NumberManipulator.AddZero(aHour);
-            TextBoxAllMinute.Text = NumberManipulator.AddZero(aMinute);
-            TextBoxAllSecond.Text = NumberManipulator.AddZero(aSecond);
+                TextBoxAllHours.Text = NumberManipulator.AddZero(aHour);
+            TextBoxAllMinutes.Text = NumberManipulator.AddZero(aMinute);
+            TextBoxAllSeconds.Text = NumberManipulator.AddZero(aSecond);
 
             if (twDay > 0)
-                TextBoxThisWeekHour.Text = NumberManipulator.AddZero((twDay * 24) + twHour);
+                TextBoxThisWeekHours.Text = NumberManipulator.AddZero((twDay * 24) + twHour);
             else
-                TextBoxThisWeekHour.Text = NumberManipulator.AddZero(twHour);
-            TextBoxThisWeekMinute.Text = NumberManipulator.AddZero(twMinute);
-            TextBoxThisWeekSecond.Text = NumberManipulator.AddZero(twSecond);
+                TextBoxThisWeekHours.Text = NumberManipulator.AddZero(twHour);
+            TextBoxThisWeekMinutes.Text = NumberManipulator.AddZero(twMinute);
+            TextBoxThisWeekSeconds.Text = NumberManipulator.AddZero(twSecond);
 
             if (tDay > 0)
-                TextBoxTodayHour.Text = NumberManipulator.AddZero((tDay * 24) + tHour);
+                TextBoxTodayHours.Text = NumberManipulator.AddZero((tDay * 24) + tHour);
             else
-                TextBoxTodayHour.Text = NumberManipulator.AddZero(tHour);
-            TextBoxTodayMinute.Text = NumberManipulator.AddZero(tMinute);
-            TextBoxTodaySecond.Text = NumberManipulator.AddZero(tSecond);
+                TextBoxTodayHours.Text = NumberManipulator.AddZero(tHour);
+            TextBoxTodayMinutes.Text = NumberManipulator.AddZero(tMinute);
+            TextBoxTodaySeconds.Text = NumberManipulator.AddZero(tSecond);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string connectionString = Properties.Settings.Default.TimeSaveDataBaseConnectionString;
+            if (!Directory.Exists(pathToDir))
+                Directory.CreateDirectory(pathToDir);
 
-            sqlConnection = new SqlConnection(connectionString);
+            FromDirToListBox();
 
-            sqlConnection.Open();
-
-            listBox1_Update();
+            
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SaveItem(selectedItem);
-            if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
-                sqlConnection.Close();
+            FromTextBoxesToFiles(selectedItem);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            if (listBox1.SelectedItem != null)
             {
                 if (selectedItem == null)
                     selectedItem = listBox1.SelectedItem.ToString();
                 else
                 {
-                    SaveItem(selectedItem);
+                    FromTextBoxesToFiles(selectedItem);
                     selectedItem = listBox1.SelectedItem.ToString();
                 }
 
+                LabelAdd.Visible = false;
                 LabelSelect.Visible = false;
                 GroupBoxAdd.Visible = true;
                 GroupBoxTime.Visible = true;
 
                 TextBoxDelete.Text = selectedItem;
                 TextBoxOldName.Text = selectedItem;
-            }
-            catch { }
 
-            SqlDataReader sqlReader = null;
+                FromFilesToTextBoxes(selectedItem);
+                NumberDayOfWeek_Update();
+                NumberDayOfYear_Update();
 
-            SqlCommand command = new SqlCommand($"SELECT * FROM [TextBoxes] WHERE [Name]=@SelectName", sqlConnection);
-
-            command.Parameters.AddWithValue("SelectName", selectedItem);
-
-            try
-            {
-                sqlReader = command.ExecuteReader();
-
-                while (sqlReader.Read())
-                {
-                    TextBoxFirstYear.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["FirstYear"]));
-                    TextBoxFirstMonth.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["FirstMonth"]));
-                    TextBoxFirstDay.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["FirstDay"]));
-                    TextBoxFirstHour.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["FirstHour"]));
-                    TextBoxFirstMinute.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["FirstMinute"]));
-                    TextBoxFirstSecond.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["FirstSecond"]));
-                    TextBoxSecondYear.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["SecondYear"]));
-                    TextBoxSecondMonth.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["SecondMonth"]));
-                    TextBoxSecondDay.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["SecondDay"]));
-                    TextBoxSecondHour.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["SecondHour"]));
-                    TextBoxSecondMinute.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["SecondMinute"]));
-                    TextBoxSecondSecond.Text = NumberManipulator.AddZero(Convert.ToInt32(sqlReader["SecondSecond"]));
-                    AllSecond = Convert.ToInt32(sqlReader["AllSecond"]);
-                    ThisWeekSecond = Convert.ToInt32(sqlReader["ThisWeekSecond"]);
-                    TodaySecond = Convert.ToInt32(sqlReader["TodaySecond"]);
-                    numberDayOfWeek = Convert.ToInt32(sqlReader["NumberWeek"]);
-                    numberDayOfYear = Convert.ToInt32(sqlReader["NumberDay"]);
-
-                    NumberDayOfWeek_Update();
-                    NumberDayOfYear_Update();
-
-                    TextBoxAllThis_Show();
-                }
-            }
-            catch (Exception) { }
-            finally
-            {
-                if (sqlReader != null)
-                    sqlReader.Close();
+                TextBoxAllThis_Show();
             }
         }
     }
