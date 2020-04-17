@@ -24,6 +24,7 @@ namespace TimeControl
             File.WriteAllText(pathToDir + "\\" + Item + "\\" + "TodaySeconds.txt", Convert.ToString(todaySeconds));
             File.WriteAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfWeek.txt", Convert.ToString(numberDayOfWeek));
             File.WriteAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfYear.txt", Convert.ToString(numberDayOfYear));
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "History.txt", HistoryTextBox.Text);
         }
 
         void FromFilesToTextBoxes(string Item)
@@ -45,6 +46,7 @@ namespace TimeControl
             todaySeconds = Convert.ToInt32(File.ReadAllText(pathToDir + "\\" + Item + "\\" + "TodaySeconds.txt"));
             numberDayOfWeek = Convert.ToInt32(File.ReadAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfWeek.txt"));
             numberDayOfYear = Convert.ToInt32(File.ReadAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfYear.txt"));
+            HistoryTextBox.Text = File.ReadAllText(pathToDir + "\\" + Item + "\\" + "History.txt");
         }
 
         void CreateEmptyFiles(string Item)
@@ -66,6 +68,7 @@ namespace TimeControl
             File.WriteAllText(pathToDir + "\\" + Item + "\\" + "TodaySeconds.txt", "0");
             File.WriteAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfWeek.txt", "0");
             File.WriteAllText(pathToDir + "\\" + Item + "\\" + "NumberDayOfYear.txt", "0");
+            File.WriteAllText(pathToDir + "\\" + Item + "\\" + "History.txt", "");
         }
 
         void FromDirToListBox()
@@ -79,20 +82,7 @@ namespace TimeControl
                 listBox1.Items.Add(dirName);
             }
 
-            if (listBox1.Items.Count <= 0)
-            {
-                LabelAdd.Visible = true;
-                LabelSelect.Visible = false;
-                GroupBoxAdd.Visible = false;
-                GroupBoxTime.Visible = false;
-            }
-            else if (listBox1.SelectedItem == null)
-            {
-                LabelAdd.Visible = false;
-                LabelSelect.Visible = true;
-                GroupBoxAdd.Visible = false;
-                GroupBoxTime.Visible = false;
-            }
+            VisiblityCheck();
         }
     }
 }

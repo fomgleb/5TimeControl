@@ -52,6 +52,24 @@ namespace TimeControl
                 thisWeekSeconds += (differenseDate.Hours * 60 * 60) + (differenseDate.Minutes * 60) + (differenseDate.Seconds) + daysInSeconds;
                 todaySeconds += (differenseDate.Hours * 60 * 60) + (differenseDate.Minutes * 60) + (differenseDate.Seconds) + daysInSeconds;
 
+                int nowSeconds = (differenseDate.Hours * 60 * 60) + (differenseDate.Minutes * 60) + (differenseDate.Seconds) + daysInSeconds;
+                var seconds = TimeSpan.FromSeconds(nowSeconds);
+                string spent = "";
+                if (seconds.Hours != 0)
+                    spent += $"{seconds.Hours} ч. ";
+                if (seconds.Minutes != 0)
+                    spent += $"{seconds.Minutes} мин. ";
+                if (seconds.Seconds != 0)
+                    spent += $"{seconds.Seconds} сек.";
+                if (spent == "")
+                    spent = "0 сек.";
+                string saveHistory = HistoryTextBox.Text;
+                HistoryTextBox.Text = "";
+                HistoryTextBox.Text += $"ОТ {TextBoxFirstDays.Text}.{TextBoxFirstMonths.Text}.{TextBoxFirstYears.Text} {TextBoxFirstHours.Text}:{TextBoxFirstMinutes.Text}:{TextBoxFirstSeconds.Text}\n" +
+                                       $"ДО {TextBoxSecondDays.Text}.{TextBoxSecondMonths.Text}.{TextBoxSecondYears.Text} {TextBoxSecondHours.Text}:{TextBoxSecondMinutes.Text}:{TextBoxSecondSeconds.Text}\n" +
+                                       $"ПОТРАЧЕНО {spent}\n\n";
+                HistoryTextBox.Text += saveHistory;
+
                 TextBoxAllThis_Show();
             }
             catch { }
@@ -95,13 +113,7 @@ namespace TimeControl
 
                 FromDirToListBox();
 
-                if (listBox1.Items == null)
-                {
-                    LabelAdd.Visible = true;
-                    LabelSelect.Visible = false;
-                    GroupBoxAdd.Visible = false;
-                    GroupBoxTime.Visible = false;
-                }
+                VisiblityCheck();
             }
             catch (Exception)
             {

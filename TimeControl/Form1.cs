@@ -60,41 +60,26 @@ namespace TimeControl
             var twSeconds = TimeSpan.FromSeconds(thisWeekSeconds);
             var tSeconds = TimeSpan.FromSeconds(todaySeconds);
 
-            var aDay = aSeconds.Days;
-            var aHour = aSeconds.Hours;
-            var aMinute = aSeconds.Minutes;
-            var aSecond = aSeconds.Seconds;
-
-            var twDay = twSeconds.Days;
-            var twHour = twSeconds.Hours;
-            var twMinute = twSeconds.Minutes;
-            var twSecond = twSeconds.Seconds;
-
-            var tDay = tSeconds.Days;
-            var tHour = tSeconds.Hours;
-            var tMinute = tSeconds.Minutes;
-            var tSecond = tSeconds.Seconds;
-
-            if (aDay > 0)
-                TextBoxAllHours.Text = NumberManipulator.AddZero((aDay * 24) + aHour);
+            if (aSeconds.Days > 0)
+                TextBoxAllHours.Text = NumberManipulator.AddZero((aSeconds.Days * 24) + aSeconds.Hours);
             else
-                TextBoxAllHours.Text = NumberManipulator.AddZero(aHour);
-            TextBoxAllMinutes.Text = NumberManipulator.AddZero(aMinute);
-            TextBoxAllSeconds.Text = NumberManipulator.AddZero(aSecond);
+                TextBoxAllHours.Text = NumberManipulator.AddZero(aSeconds.Hours);
+            TextBoxAllMinutes.Text = NumberManipulator.AddZero(aSeconds.Minutes);
+            TextBoxAllSeconds.Text = NumberManipulator.AddZero(aSeconds.Seconds);
 
-            if (twDay > 0)
-                TextBoxThisWeekHours.Text = NumberManipulator.AddZero((twDay * 24) + twHour);
+            if (twSeconds.Days > 0)
+                TextBoxThisWeekHours.Text = NumberManipulator.AddZero((twSeconds.Days * 24) + twSeconds.Hours);
             else
-                TextBoxThisWeekHours.Text = NumberManipulator.AddZero(twHour);
-            TextBoxThisWeekMinutes.Text = NumberManipulator.AddZero(twMinute);
-            TextBoxThisWeekSeconds.Text = NumberManipulator.AddZero(twSecond);
+                TextBoxThisWeekHours.Text = NumberManipulator.AddZero(twSeconds.Hours);
+            TextBoxThisWeekMinutes.Text = NumberManipulator.AddZero(twSeconds.Minutes);
+            TextBoxThisWeekSeconds.Text = NumberManipulator.AddZero(twSeconds.Seconds);
 
-            if (tDay > 0)
-                TextBoxTodayHours.Text = NumberManipulator.AddZero((tDay * 24) + tHour);
+            if (tSeconds.Days > 0)
+                TextBoxTodayHours.Text = NumberManipulator.AddZero((tSeconds.Days * 24) + tSeconds.Hours);
             else
-                TextBoxTodayHours.Text = NumberManipulator.AddZero(tHour);
-            TextBoxTodayMinutes.Text = NumberManipulator.AddZero(tMinute);
-            TextBoxTodaySeconds.Text = NumberManipulator.AddZero(tSecond);
+                TextBoxTodayHours.Text = NumberManipulator.AddZero(tSeconds.Hours);
+            TextBoxTodayMinutes.Text = NumberManipulator.AddZero(tSeconds.Minutes);
+            TextBoxTodaySeconds.Text = NumberManipulator.AddZero(tSeconds.Seconds);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -125,10 +110,7 @@ namespace TimeControl
                     selectedItem = listBox1.SelectedItem.ToString();
                 }
 
-                LabelAdd.Visible = false;
-                LabelSelect.Visible = false;
-                GroupBoxAdd.Visible = true;
-                GroupBoxTime.Visible = true;
+                VisiblityCheck();
 
                 TextBoxDelete.Text = selectedItem;
                 TextBoxOldName.Text = selectedItem;
@@ -139,6 +121,25 @@ namespace TimeControl
                 FromTextBoxesToFiles(selectedItem);
 
                 TextBoxAllThis_Show();
+            }
+        }
+
+        private void VisiblityCheck()
+        {
+            if (listBox1.Items.Count <= 0)
+            {
+                LabelAdd.Visible = true;
+                LabelSelect.Visible = GroupBoxAdd.Visible = GroupBoxTime.Visible = HistoryTextBox.Visible = HistoryLabel.Visible = false;
+            }
+            else if (listBox1.SelectedItem == null)
+            {
+                LabelSelect.Visible = true;
+                LabelAdd.Visible = GroupBoxAdd.Visible = GroupBoxTime.Visible = HistoryTextBox.Visible = HistoryLabel.Visible = false;
+            }
+            else
+            {
+                LabelAdd.Visible = LabelSelect.Visible = false;
+                GroupBoxAdd.Visible = GroupBoxTime.Visible = HistoryTextBox.Visible = HistoryLabel.Visible = true;
             }
         }
     }

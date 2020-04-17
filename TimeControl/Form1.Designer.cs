@@ -87,6 +87,8 @@
             this.LabelAdd = new System.Windows.Forms.Label();
             this.GroupBoxTime = new System.Windows.Forms.GroupBox();
             this.LabelSelect = new System.Windows.Forms.Label();
+            this.HistoryTextBox = new System.Windows.Forms.RichTextBox();
+            this.HistoryLabel = new System.Windows.Forms.Label();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -102,9 +104,9 @@
             this.listBox1.ItemHeight = 29;
             this.listBox1.Items.AddRange(new object[] {
             "Загрузка..."});
-            this.listBox1.Location = new System.Drawing.Point(16, 428);
+            this.listBox1.Location = new System.Drawing.Point(12, 428);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(277, 381);
+            this.listBox1.Size = new System.Drawing.Size(285, 381);
             this.listBox1.TabIndex = 2;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -734,9 +736,9 @@
             this.GroupBoxAdd.Controls.Add(this.ButtonSetNowFirst);
             this.GroupBoxAdd.Controls.Add(this.ButtonSetNowSecond);
             this.GroupBoxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GroupBoxAdd.Location = new System.Drawing.Point(309, 16);
+            this.GroupBoxAdd.Location = new System.Drawing.Point(309, 21);
             this.GroupBoxAdd.Name = "GroupBoxAdd";
-            this.GroupBoxAdd.Size = new System.Drawing.Size(702, 406);
+            this.GroupBoxAdd.Size = new System.Drawing.Size(702, 401);
             this.GroupBoxAdd.TabIndex = 172;
             this.GroupBoxAdd.TabStop = false;
             this.GroupBoxAdd.Text = "Добавить потраченое время";
@@ -779,9 +781,9 @@
             this.GroupBoxTime.Controls.Add(this.label21);
             this.GroupBoxTime.Controls.Add(this.ButtonClearThisWeek);
             this.GroupBoxTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GroupBoxTime.Location = new System.Drawing.Point(309, 428);
+            this.GroupBoxTime.Location = new System.Drawing.Point(309, 417);
             this.GroupBoxTime.Name = "GroupBoxTime";
-            this.GroupBoxTime.Size = new System.Drawing.Size(702, 381);
+            this.GroupBoxTime.Size = new System.Drawing.Size(702, 392);
             this.GroupBoxTime.TabIndex = 173;
             this.GroupBoxTime.TabStop = false;
             this.GroupBoxTime.Text = "Потраченое время";
@@ -799,11 +801,34 @@
             this.LabelSelect.TabIndex = 148;
             this.LabelSelect.Text = "<---- Выбери элемент";
             // 
+            // HistoryTextBox
+            // 
+            this.HistoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HistoryTextBox.Location = new System.Drawing.Point(1028, 34);
+            this.HistoryTextBox.Name = "HistoryTextBox";
+            this.HistoryTextBox.Size = new System.Drawing.Size(357, 775);
+            this.HistoryTextBox.TabIndex = 175;
+            this.HistoryTextBox.Text = "ОТ 17.04.2020 19:56:32\nДО 17.04.2020 20:56:32\nПОТРАЧЕНО 1 час";
+            this.HistoryTextBox.Visible = false;
+            // 
+            // HistoryLabel
+            // 
+            this.HistoryLabel.AutoSize = true;
+            this.HistoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HistoryLabel.Location = new System.Drawing.Point(1164, 6);
+            this.HistoryLabel.Name = "HistoryLabel";
+            this.HistoryLabel.Size = new System.Drawing.Size(95, 25);
+            this.HistoryLabel.TabIndex = 176;
+            this.HistoryLabel.Text = "История";
+            this.HistoryLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 825);
+            this.ClientSize = new System.Drawing.Size(1397, 825);
+            this.Controls.Add(this.HistoryLabel);
+            this.Controls.Add(this.HistoryTextBox);
             this.Controls.Add(this.LabelAdd);
             this.Controls.Add(this.LabelSelect);
             this.Controls.Add(this.GroupBoxTime);
@@ -892,6 +917,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LabelAdd;
         private System.Windows.Forms.Label LabelSelect;
+        private System.Windows.Forms.RichTextBox HistoryTextBox;
+        private System.Windows.Forms.Label HistoryLabel;
     }
 }
 
