@@ -808,7 +808,7 @@
             this.HistoryTextBox.Name = "HistoryTextBox";
             this.HistoryTextBox.Size = new System.Drawing.Size(357, 775);
             this.HistoryTextBox.TabIndex = 175;
-            this.HistoryTextBox.Text = "ОТ 17.04.2020 19:56:32\nДО 17.04.2020 20:56:32\nПОТРАЧЕНО 1 час";
+            this.HistoryTextBox.Text = "";
             this.HistoryTextBox.Visible = false;
             // 
             // HistoryLabel
