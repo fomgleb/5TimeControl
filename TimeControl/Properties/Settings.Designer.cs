@@ -23,14 +23,15 @@ namespace TimeControl.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\TimeSaveDataB" +
-            "ase.mdf;Integrated Security=True")]
-        public string TimeSaveDataBaseConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SelectedDirectory {
             get {
-                return ((string)(this["TimeSaveDataBaseConnectionString"]));
+                return ((string)(this["SelectedDirectory"]));
+            }
+            set {
+                this["SelectedDirectory"] = value;
             }
         }
     }

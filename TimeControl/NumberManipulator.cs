@@ -2,19 +2,19 @@
 
 namespace TimeControl
 {
-    class NumberManipulator
+    static class NumberManipulator
     {
         public static string AddZero(Int32 dateTime)
         {
-            string result = Convert.ToString(dateTime);
+            string result = dateTime.ToString();
             if (dateTime < 10)
-                result = "0" + Convert.ToString(dateTime);
+                result = $"0{dateTime}";
             return result;
         }
 
         public static int GetNumberDayOfWeek(DayOfWeek dayOfWeek)
         {
-            string Day = Convert.ToString(dayOfWeek);
+            string Day = dayOfWeek.ToString();
             int result;
             switch (Day)
             {
